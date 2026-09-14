@@ -1,0 +1,15 @@
+name: Aikido Security Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  aikido-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Aikido scan
+        run: echo "Aikido scans via integration, no extra step needed here"
