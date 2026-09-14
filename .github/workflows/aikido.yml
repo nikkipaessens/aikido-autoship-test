@@ -11,5 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run Aikido scan
-        run: echo "Aikido scans via integration, no extra step needed here"
+      - name: Install dependencies
+        run: npm install
+      - name: Aikido CI scan
+        run: npx @aikido/ci-scanner
+        env:
+          AIKIDO_SECRET_KEY: ${{ secrets.AIKIDO_SECRET_KEY }}
